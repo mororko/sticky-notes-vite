@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Notes App</title>
+  </head>
+  <body>
+    <!-- Barra de herramientas -->
+    <div class="toolbar">
+      <!-- Grupo: Añadir nota -->
+      <div class="toolbar-group">
+        <select id="color" title="Color de nota">
+          <option value="#fff176" style="background-color:#fff176;">Amarillo</option>
+          <option value="#aed581" style="background-color:#aed581;">Verde</option>
+          <option value="#81d4fa" style="background-color:#81d4fa;">Azul</option>
+          <option value="#ffab91" style="background-color:#ffab91;">Naranja</option>
+          <option value="#ce93d8" style="background-color:#ce93d8;">Violeta</option>
+        </select>
+
+        <select id="category" title="Categoría">
+          <option value="idea">💡 Idea</option>
+          <option value="task">✅ Tarea</option>
+          <option value="urgent">🔥 Urgente</option>
+          <option value="pending">⏳ Pendiente</option>
+        </select>
+
+        <div id="tagsInput" class="tag-selector">
+          <label><input type="checkbox" value="trabajo"> trabajo</label>
+          <label><input type="checkbox" value="personal"> personal</label>
+          <label><input type="checkbox" value="ideas"> ideas</label>
+          <label><input type="checkbox" value="importante"> importante</label>
+          <label><input type="checkbox" value="largo plazo"> largo plazo</label>
+        </div>
+
+        <button id="addNote">➕ Añadir Nota</button>
+      </div>
+
+      <!-- Grupo: Filtros -->
+      <div class="toolbar-group">
+        <select id="filterCategory">
+          <option value="">Todas</option>
+          <option value="idea">Idea</option>
+          <option value="task">Tarea</option>
+          <option value="urgent">Urgente</option>
+          <option value="pending">Pendiente</option>
+        </select>
+
+        <select id="filterTags">
+          <option value="">Todas las etiquetas</option>
+          <option value="trabajo">trabajo</option>
+          <option value="personal">personal</option>
+          <option value="ideas">ideas</option>
+          <option value="importante">importante</option>
+          <option value="largo plazo">largo plazo</option>
+        </select>
+
+        <input type="text" id="search" placeholder="Buscar texto..." />
+      </div>
+
+      <!-- Grupo: Acciones -->
+      <div class="toolbar-group">
+        <button id="exportBtn">📤 Exportar</button>
+        <button id="importBtn">📥 Importar</button>
+        <input type="file" id="importFile" accept="application/json" />
+        <button id="clearBoard">🗑️ Limpiar</button>
+        <button id="resetBoard">🔄 Restablecer</button>
+        <button id="toggleDark">🌓 Modo Oscuro</button>
+      </div>
+    </div>
+
+    <!-- Tablero de notas -->
+    <main id="board">
+      <ul class="sticky-notes"></ul>
+    </main>
+
+    <!-- Papelera -->
+    <div id="trash">🗑️</div>
+
+    <!-- Toast de notificaciones -->
+    <div id="toast"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
